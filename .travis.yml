@@ -6,7 +6,7 @@ before_install:
   - docker build -t hrishikesh7/docker-frontend -f Dockerfile.dev .
 
 script:
-  - docker run hrishikesh7/docker-frontend npm run test -- --coverage
+  - docker run -e CI=true hrishikesh7/docker-frontend npm run test
 
 deploy: 
   provider: elasticbeanstalk
